@@ -1,0 +1,5 @@
+rootProject.name = 'exemple-codegen'
+
+include 'native'
+include 'feign'
+
