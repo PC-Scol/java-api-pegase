@@ -30,13 +30,13 @@ dependencies {
 }
 
 openApiValidate {
-    inputSpec = "$project.projectDir/src/main/resources/ref-api-1.3.0.yml".toString()
+    inputSpec = "$project.parent.projectDir/apis/ref-api-1.3.0.yml".toString()
 }
 
 openApiGenerate {
     generatorName = "java"
     skipValidateSpec = true
-    inputSpec = "$project.projectDir/src/main/resources/ref-api-1.3.0.yml".toString()
+    inputSpec = "$project.parent.projectDir/apis/ref-api-1.3.0.yml".toString()
     outputDir = "$project.buildDir/generated".toString()
     apiPackage = "fr.pcscol.codegen.nativ.ref.api"
     invokerPackage = "fr.pcscol.codegen.nativ.ref.invoker"

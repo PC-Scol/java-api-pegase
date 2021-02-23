@@ -1,0 +1,10 @@
+{
+  "groupId" : "fr.pcscol.api",
+  "artifactId" : "ref-api",
+  "artifactVersion" : "1.3.0",
+  "apiPackage" : "fr.pcscol.codegen.nativ.ref.api",
+  "invokerPackage" : "fr.pcscol.codegen.nativ.ref.invoker",
+  "modelPackage" : "fr.pcscol.codegen.nativ.ref.model",
+  "dateLibrary": "java8",
+  "library" : "native"
+}
