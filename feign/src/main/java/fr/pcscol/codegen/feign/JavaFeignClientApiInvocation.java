@@ -13,9 +13,9 @@ public class JavaFeignClientApiInvocation {
     public static final String API_BASE_PATH = "https://ref.rdd.pc-scol.fr/api/v1/ref";
 
     /**
-     * CAS URL
+     * CAS HOST URL
      */
-    public static final String CAS_URL = "https://authn-app.rdd.pc-scol.fr/cas/v1/tickets";
+    public static final String CAS_HOST = "https://authn-app.rdd.pc-scol.fr";
 
     /**
      * Compte de service LOGIN
@@ -53,7 +53,7 @@ public class JavaFeignClientApiInvocation {
 
     private static ApiClient configureApiClient() {
 
-        PcscolClientCredentialsGrant oauth = new PcscolClientCredentialsGrant(CAS_URL, SVC_ACCOUNT_LOGIN, SVC_ACCOUNT_PASSWORD);
+        PcscolClientCredentialsGrant oauth = new PcscolClientCredentialsGrant(CAS_HOST, SVC_ACCOUNT_LOGIN, SVC_ACCOUNT_PASSWORD);
         ApiClient apiClient = new ApiClient();
         apiClient.setBasePath(API_BASE_PATH);
         apiClient.addAuthorization("idTokenAuth", oauth);

@@ -23,7 +23,7 @@
     - `open-api-generator config-help -g java` (https://github.com/OpenAPITools/openapi-generator/blob/v5.0.0/docs/generators/java.md)
 - Générer un client java : `open-api-generator generate -g java -i ./apis/ref-api-1.3.0.yml -c java-gen-config.json -o generated`
 
-## Intégration dans un projet
+## Intégration dans un projet Java
 
 - Visiter https://github.com/OpenAPITools/openapi-generator/blob/v5.0.0/docs/integration.md
 - Implémentation avec client java 'native'
