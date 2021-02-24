@@ -1,5 +1,9 @@
 rootProject.name = 'exemple-codegen'
 
+//exos
+include 'native-exo'
+include 'feign-exo'
+//solutions
 include 'native'
 include 'feign'
 

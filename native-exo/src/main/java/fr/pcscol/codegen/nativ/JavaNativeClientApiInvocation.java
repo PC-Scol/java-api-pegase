@@ -52,9 +52,11 @@ public class JavaNativeClientApiInvocation {
     private static void invokeNoBearerToken(ApiClient apiClient) {
         System.out.println("Appel de l'api StructureApi (No Access Token)...");
         try {
-            StructureApi structureApi = new StructureApi(apiClient);
-            Structure structure = structureApi.lire("ETAB00");
+            //TODO faire appel à l'api sans access token
+            Structure structure = new Structure();
             System.out.println(structure.toString());
+            //TODO supprimer ligne suivante
+            throw new ApiException();
         } catch (ApiException e) {
             System.out.println("Erreur lors de l'invocation de l'api : ");
             System.out.println("Http code:" + e.getCode());
@@ -65,12 +67,11 @@ public class JavaNativeClientApiInvocation {
     private static void invokeWithBearerToken(ApiClient apiClient) {
         System.out.println("Appel de l'api StructureApi (Avec Access Token)...");
         try {
-            apiClient.setRequestInterceptor(builder -> {
-                builder.setHeader("Authorization", "Bearer " + getAccessToken());
-            });
-            StructureApi structureApi = new StructureApi(apiClient);
-            Structure structure = structureApi.lire("ETAB00");
+            //TODO faire l'appel à l'api avec access token
+            Structure structure = new Structure();
             System.out.println(structure.toString());
+            //TODO supprimer ligne suivante
+            throw new ApiException();
         } catch (ApiException e) {
             System.out.println("Erreur lors de l'invocation de l'api : ");
             System.out.println("Http code:" + e.getCode());
@@ -79,20 +80,15 @@ public class JavaNativeClientApiInvocation {
     }
 
     private static ApiClient configureApiClient() {
-        ApiClient apiClient = new ApiClient();
-        apiClient.setScheme("https");
-        apiClient.setHost(API_HOST);
-        apiClient.setBasePath("/api/v1/ref");
-        return apiClient;
+        //TODO configurer le client
+        return null;
     }
 
     private static String getAccessToken() {
         System.out.println("Récupération de l'Access Token ...");
         HttpClient httpClient = HttpClient.newHttpClient();
-        HttpRequest httpRequest = HttpRequest.newBuilder(URI.create(CAS_URL))
-                .header(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded")
-                .POST(HttpRequest.BodyPublishers.ofString("username=" + SVC_ACCOUNT_LOGIN + "&password=" + SVC_ACCOUNT_PASSWORD + "&token=true"))
-                .build();
+        //TODO implémenter la requête de récupération de l'access token
+        HttpRequest httpRequest = null;
         try {
             HttpResponse<String> response = httpClient.send(httpRequest, HttpResponse.BodyHandlers.ofString());
             System.out.println("Access Token : "+response.body());

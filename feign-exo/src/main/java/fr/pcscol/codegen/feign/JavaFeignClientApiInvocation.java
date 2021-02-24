@@ -41,22 +41,18 @@ public class JavaFeignClientApiInvocation {
     private static void invokeWithRefreshBearerToken(ApiClient apiClient) {
         //1er appel cherche le token
         System.out.println("Appel de l'api StructureApi...");
-        StructureApi structureApi = apiClient.buildClient(StructureApi.class);
-        Structure structure = structureApi.lire("ETAB00");
+        //TODO appeler l'api
+        Structure structure = new Structure();
         System.out.println(structure.toString());
 
         //2eme appel utilise le même token
         System.out.println("Appel de l'api StructureApi...");
-        structureApi.lire("ETAB00");
+        //TODO appeler l'api et vérifier que l'access token a été réutilisé
         System.out.println(structure.toString());
     }
 
     private static ApiClient configureApiClient() {
-
-        PcscolClientCredentialsGrant oauth = new PcscolClientCredentialsGrant(CAS_HOST, SVC_ACCOUNT_LOGIN, SVC_ACCOUNT_PASSWORD);
-        ApiClient apiClient = new ApiClient();
-        apiClient.setBasePath(API_BASE_PATH);
-        apiClient.addAuthorization("idTokenAuth", oauth);
-        return apiClient;
+        //TODO configurer le client
+        return null;
     }
 }

@@ -25,7 +25,8 @@
 
 ## Intégration dans un projet Java
 
-- Visiter https://github.com/OpenAPITools/openapi-generator/blob/v5.0.0/docs/integration.md
+- Visiter https://github.com/OpenAPITools/openapi-generator/blob/v5.0.0/docs/integration.md 
+  et https://github.com/OpenAPITools/openapi-generator/tree/master/samples/client/petstore/
 - Implémentation avec client java 'native'
 - Implémentation avec client java 'feign'
 
